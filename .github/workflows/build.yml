@@ -31,7 +31,7 @@ jobs:
 
     - name: 6. Criar o executável com PyInstaller
       run: |
-        pyinstaller --onefile --windowed --add-binary "$(which ffmpeg):." --name "GeradorDeAudioEN" gerador_en_gui.py
+        pyinstaller --onefile --windowed --add-binary "$(which ffmpeg):." --name "GeradorDeAudioEN" gerador_en.py
 
     - name: 7. Disponibilizar o .app para download
       uses: actions/upload-artifact@v4
