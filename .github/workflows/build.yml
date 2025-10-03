@@ -20,16 +20,20 @@ jobs:
     - name: 3. Instalar o FFmpeg
       run: brew install ffmpeg
 
-    - name: 4. Instalar as bibliotecas Python
+    - name: 4. Instalar as bibliotecas do requirements.txt
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+    
+    ### CORREÇÃO APLICADA AQUI ###
+    - name: 5. Instalar o PyInstaller separadamente
+      run: pip install pyinstaller
 
-    - name: 5. Criar o executável com PyInstaller
+    - name: 6. Criar o executável com PyInstaller
       run: |
         pyinstaller --onefile --windowed --add-binary "$(which ffmpeg):." --name "GeradorDeAudioEN" gerador_en_gui.py
 
-    - name: 6. Disponibilizar o .app para download
+    - name: 7. Disponibilizar o .app para download
       uses: actions/upload-artifact@v4
       with:
         name: GeradorDeAudioEN-macOS
