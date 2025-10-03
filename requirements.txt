@@ -1,0 +1,9 @@
+requests
+num2words
+python-docx
+langdetect
+moviepy==1.0.3
+tqdm
+pygame
+ttkbootstrap
+pypdf
